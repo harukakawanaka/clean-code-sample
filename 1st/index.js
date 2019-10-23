@@ -28,6 +28,8 @@ let Arg = class {
     _args = [];
     valid = false;
     unexpectedArguments = [];
+    // 連想配列
+    booleanArgs = [];
     constructor(schema, args) {
         this._schema = schema;
         this._args = args;
@@ -59,12 +61,14 @@ let Arg = class {
 
     parseArgument(arg) {
         // 入力されたコマンドライン引数が正しく動作する文字列か検証する。
+        // 検証した結果、正しくない場合は unexpectedArguments にエラーメッセージを入れる。
         // 例: unexpectedArguments.push("引数にmは使用できません。");
         // 例: unexpectedArguments.push("true または falseを入力してください。");
         // 入力されたコマンドライン引数を正しくセットする
     }
 
     getBoolean(arg) {
+        // booleanArgsから値を取得する
         return true;
     }
 }
